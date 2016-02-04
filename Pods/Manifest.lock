@@ -1,0 +1,20 @@
+PODS:
+  - ShareSDK3 (3.2.0):
+    - ShareSDK3/ShareSDK (= 3.2.0)
+  - ShareSDK3/ShareSDK (3.2.0)
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.2.0)
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.2.0)
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.2.0)
+  - ShareSDK3/ShareSDKUI (3.2.0)
+
+DEPENDENCIES:
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
+
+SPEC CHECKSUMS:
+  ShareSDK3: 2987b2c38210299d8c3259fff65740f59691a688
+
+COCOAPODS: 0.39.0

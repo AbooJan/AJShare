@@ -126,7 +126,7 @@ static AJShare *_instance;
 
 #pragma mark - <业务逻辑>
 
-#pragma mark ShareSDK 默认分享UI
+#pragma mark 默认分享UI
 
 - (void)shareWithTitle:(NSString *)title content:(NSString *)content url:(NSString *)url imageName:(NSString *)imageName sender:(id)sender relust:(ShareResult)result
 {
@@ -148,6 +148,16 @@ static AJShare *_instance;
                                       title:title
                                        type:SSDKContentTypeAuto];
     
+    // 新浪分享需要特别处理，链接必须加到内容尾部
+    [shareParams SSDKSetupSinaWeiboShareParamsByText:[NSString stringWithFormat:@"%@\n%@", content, url]
+                                               title:title
+                                               image:image
+                                                 url:nil
+                                            latitude:0
+                                           longitude:0
+                                            objectID:nil
+                                                type:SSDKContentTypeAuto];
+    
     // 2. 分享平台
     NSMutableArray *activePlatforms = [NSMutableArray arrayWithArray:[ShareSDK activePlatforms]];
     
@@ -156,32 +166,8 @@ static AJShare *_instance;
                              items:activePlatforms
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
-                   
-                   switch (state) {
-                           
-                       case SSDKResponseStateSuccess:
-                       {
-                           result(YES, nil);
-                           break;
-                       }
-                       case SSDKResponseStateFail:
-                       {
-                           result(NO, error);
-                           NSLog(@"分享失败：%ld : %@", [error code], [error description]);
-                           break;
-                       }
-                       case SSDKResponseStateCancel:
-                       {
-                           result(NO,error);
-                           NSLog(@"取消分享");
-                           break;
-                       }
-                           
-                       default:
-                           break;
-                   }
-               }
-     ];
+                   [self handleResultWithStata:state err:error callback:result];
+               }];
 }
 
 #pragma mark 无UI分享
@@ -205,37 +191,65 @@ static AJShare *_instance;
                                       title:title
                                        type:SSDKContentTypeAuto];
     
+    // 新浪分享需要特别处理，链接必须加到内容尾部
+    [shareParams SSDKSetupSinaWeiboShareParamsByText:[NSString stringWithFormat:@"%@\n%@", content, url]
+                                               title:title
+                                               image:image
+                                                 url:nil
+                                            latitude:0
+                                           longitude:0
+                                            objectID:nil
+                                                type:SSDKContentTypeAuto];
+    
     //2. 进行分享
-    [ShareSDK share:(SSDKPlatformType)shareType
-         parameters:shareParams
-     onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
-         
-         switch (state) {
-                 
-             case SSDKResponseStateSuccess:
-             {
-                 result(YES, nil);
-                 break;
-             }
-             case SSDKResponseStateFail:
-             {
-                 result(NO, error);
-                 NSLog(@"分享失败：%ld : %@", [error code], [error description]);
-                 break;
-             }
-             case SSDKResponseStateCancel:
-             {
-                 result(NO,error);
-                 NSLog(@"取消分享");
-                 break;
-             }
-                 
-             default:
-                 break;
-         }
-     }];
+    if (shareType == AJShareTypeSinaWeibo) {
+        // 显示编辑页面
+        [ShareSDK showShareEditor:(SSDKPlatformType)shareType
+               otherPlatformTypes:nil
+                      shareParams:shareParams
+              onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+                  [self handleResultWithStata:state err:error callback:result];
+              }];
+        
+    }else{
+        
+        [ShareSDK share:(SSDKPlatformType)shareType
+             parameters:shareParams
+         onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+             [self handleResultWithStata:state err:error callback:result];
+         }];
+    }
 }
 
+#pragma mark 分享回调处理
+- (void)handleResultWithStata:(SSDKResponseState)state err:(NSError *)error callback:(ShareResult)result
+{
+    switch (state) {
+            
+        case SSDKResponseStateSuccess:
+        {
+            result(YES, nil);
+            break;
+        }
+        case SSDKResponseStateFail:
+        {
+            result(NO, error);
+            NSLog(@"分享失败：%ld : %@", [error code], [error description]);
+            break;
+        }
+        case SSDKResponseStateCancel:
+        {
+            result(NO,error);
+            NSLog(@"取消分享");
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
+#pragma mark -
 #pragma mark 第三方登录
 - (void)loginWithType:(AJPlatformType)loginType result:(LoginResult)result
 {

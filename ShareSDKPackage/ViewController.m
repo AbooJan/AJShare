@@ -55,17 +55,17 @@
     NSString *url = @"http://www.jianzhimao.com";
     NSString *imgUrl = @"http://oss.aliyuncs.com/jianzhimao/jzmao/qiye/1702487/1449231769684_logo.jpg";
     
-//    [[AJShare shareInstance] shareWithType:AJShareTypeSinaWeibo title:titleStr content:contentStr url:url imageName:imgName sender:sender relust:^(BOOL success, NSError *error) {
-//        if (success) {
-//            NSLog(@"分享成功");
-//        }
-//    }];
-    
-    [[AJShare shareInstance] shareWithType:AJShareTypeSinaWeibo title:titleStr content:contentStr url:url imageUrl:imgUrl sender:sender relust:^(BOOL success, NSError *error) {
+    [[AJShare shareInstance] shareWithType:AJShareTypeSinaWeibo title:titleStr content:contentStr url:url imageName:imgName sender:sender relust:^(BOOL success, NSError *error) {
         if (success) {
             NSLog(@"分享成功");
         }
     }];
+    
+//    [[AJShare shareInstance] shareWithType:AJShareTypeSinaWeibo title:titleStr content:contentStr url:url imageUrl:imgUrl sender:sender relust:^(BOOL success, NSError *error) {
+//        if (success) {
+//            NSLog(@"分享成功");
+//        }
+//    }];
 }
 - (IBAction)qqShareBtnClick:(id)sender
 {

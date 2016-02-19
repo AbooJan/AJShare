@@ -111,6 +111,13 @@ typedef void(^ReadUserInfoResult)(BOOL success, SSDKUser *user, NSError *error);
 - (void)readUserInfoWithType:(AJPlatformType)platformType result:(ReadUserInfoResult)result;
 
 /**
+ *  取消授权
+ *
+ *  @param platformType 需要取消授权的平台
+ */
+- (void)cancelAuthorizeWithType:(AJPlatformType)platformType;
+
+/**
  *  检查第三方登录客户端是否安装
  *
  *  @param platformType 登录平台

@@ -240,6 +240,20 @@
     }];
 }
 
+#pragma mark - <取消授权>
 
+- (IBAction)sinaWeiboCancelAuthBtnClick:(id)sender
+{
+    [[AJShare shareInstance] cancelAuthorizeWithType:AJPlatformTypeSinaWeibo];
+}
+
+- (IBAction)qqCancelAuthBtnClick:(id)sender
+{
+    [[AJShare shareInstance] cancelAuthorizeWithType:AJPlatformTypeQQ];
+}
+- (IBAction)wechatCancelAuthBtnClick:(id)sender
+{
+    [[AJShare shareInstance] cancelAuthorizeWithType:AJPlatformTypeWeChat];
+}
 
 @end

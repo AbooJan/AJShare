@@ -293,6 +293,15 @@ static AJShare *_instance;
     }];
 }
 
+- (void)cancelAuthorizeWithType:(AJPlatformType)platformType
+{
+    if ([ShareSDK hasAuthorized:(SSDKPlatformType)platformType]) {
+        [ShareSDK cancelAuthorize:(SSDKPlatformType)platformType];
+    }else{
+        NSLog(@"没有授权");
+    }
+}
+
 - (BOOL)checkLoginPlatform:(AJPlatformType)platformType
 {
     BOOL isInstalled = [ShareSDK isClientInstalled:(SSDKPlatformType)platformType];

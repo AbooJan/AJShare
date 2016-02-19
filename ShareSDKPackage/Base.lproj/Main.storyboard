@@ -169,6 +169,45 @@
                                     <action selector="qqBtnCLick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cZZ-YS-fsV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取消授权" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azj-jQ-44M">
+                                <rect key="frame" x="16" y="345" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vze-Yh-BJ2">
+                                <rect key="frame" x="16" y="374" width="189" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="X5g-Ut-emX"/>
+                                </constraints>
+                                <state key="normal" title="新浪"/>
+                                <connections>
+                                    <action selector="sinaWeiboCancelAuthBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vtE-hy-p7d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfV-ro-2je">
+                                <rect key="frame" x="206" y="374" width="188" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IdI-NC-K7m"/>
+                                </constraints>
+                                <state key="normal" title="QQ"/>
+                                <connections>
+                                    <action selector="qqCancelAuthBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5FP-EO-enM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gb2-IB-YXT">
+                                <rect key="frame" x="395" y="374" width="189" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6fg-zk-EIR"/>
+                                </constraints>
+                                <state key="normal" title="微信"/>
+                                <connections>
+                                    <action selector="wechatCancelAuthBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7bl-3F-qwj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -184,13 +223,17 @@
                             <constraint firstItem="tgo-aW-hMV" firstAttribute="width" secondItem="tCa-1a-xJl" secondAttribute="width" id="C65-HX-MEI"/>
                             <constraint firstItem="cnL-7l-ufp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="DAH-mT-gie"/>
                             <constraint firstItem="3Xn-fU-QHS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Enl-fb-bEN"/>
+                            <constraint firstItem="Gb2-IB-YXT" firstAttribute="width" secondItem="tfV-ro-2je" secondAttribute="width" id="FjZ-2i-W02"/>
                             <constraint firstItem="Dc2-C7-GAU" firstAttribute="top" secondItem="dBQ-lW-erL" secondAttribute="bottom" constant="36" id="HKg-fW-h8W"/>
                             <constraint firstItem="e97-Vt-ZbX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="HMC-VE-1b0"/>
                             <constraint firstItem="bOl-wC-aBp" firstAttribute="leading" secondItem="h42-sB-1K5" secondAttribute="trailing" constant="1" id="Jy6-JP-fcQ"/>
+                            <constraint firstItem="Vze-Yh-BJ2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Kp7-FR-E7W"/>
                             <constraint firstItem="3Xn-fU-QHS" firstAttribute="top" secondItem="e97-Vt-ZbX" secondAttribute="bottom" constant="16" id="L4S-hb-5Ta"/>
                             <constraint firstItem="dBQ-lW-erL" firstAttribute="width" secondItem="h42-sB-1K5" secondAttribute="width" id="MHD-Mc-nyx"/>
                             <constraint firstItem="tCa-1a-xJl" firstAttribute="top" secondItem="bOl-wC-aBp" secondAttribute="bottom" constant="36" id="Rxa-rV-pib"/>
                             <constraint firstItem="dBQ-lW-erL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Vwo-jk-ib4"/>
+                            <constraint firstItem="azj-jQ-44M" firstAttribute="top" secondItem="jpq-9l-c4K" secondAttribute="bottom" constant="8" id="X8S-Yl-sBi"/>
+                            <constraint firstItem="Vze-Yh-BJ2" firstAttribute="top" secondItem="azj-jQ-44M" secondAttribute="bottom" constant="8" id="Y2L-Nw-hH0"/>
                             <constraint firstAttribute="trailing" secondItem="bOl-wC-aBp" secondAttribute="trailing" constant="16" id="aPb-To-BKg"/>
                             <constraint firstItem="AEO-8h-MJp" firstAttribute="centerY" secondItem="Syl-um-jvf" secondAttribute="centerY" id="am5-eX-cJy"/>
                             <constraint firstItem="hJh-AY-N5A" firstAttribute="width" secondItem="dBs-bv-1VZ" secondAttribute="width" id="b2a-CA-PiM"/>
@@ -198,25 +241,33 @@
                             <constraint firstItem="Syl-um-jvf" firstAttribute="centerY" secondItem="jpq-9l-c4K" secondAttribute="centerY" id="c92-fV-KNr"/>
                             <constraint firstItem="hJh-AY-N5A" firstAttribute="leading" secondItem="3Xn-fU-QHS" secondAttribute="trailing" constant="1" id="d32-N9-LeN"/>
                             <constraint firstItem="Syl-um-jvf" firstAttribute="width" secondItem="AEO-8h-MJp" secondAttribute="width" id="dVF-wC-f5e"/>
+                            <constraint firstItem="azj-jQ-44M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="eCa-QI-FYg"/>
                             <constraint firstItem="tgo-aW-hMV" firstAttribute="top" secondItem="h42-sB-1K5" secondAttribute="bottom" constant="36" id="eXT-sa-uh4"/>
                             <constraint firstItem="cnL-7l-ufp" firstAttribute="top" secondItem="Dc2-C7-GAU" secondAttribute="bottom" constant="20" id="ezQ-R9-k0S"/>
                             <constraint firstItem="h42-sB-1K5" firstAttribute="top" secondItem="hJh-AY-N5A" secondAttribute="bottom" constant="4" id="fKN-cO-GHA"/>
                             <constraint firstItem="h42-sB-1K5" firstAttribute="width" secondItem="bOl-wC-aBp" secondAttribute="width" id="gW2-lU-46M"/>
+                            <constraint firstAttribute="trailing" secondItem="Gb2-IB-YXT" secondAttribute="trailing" constant="16" id="lvq-Et-9zp"/>
                             <constraint firstItem="e97-Vt-ZbX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="mW8-kQ-U0l"/>
                             <constraint firstItem="h42-sB-1K5" firstAttribute="leading" secondItem="dBQ-lW-erL" secondAttribute="trailing" constant="1" id="n2m-92-isN"/>
                             <constraint firstItem="AEO-8h-MJp" firstAttribute="leading" secondItem="Syl-um-jvf" secondAttribute="trailing" constant="1" id="o0F-rC-RkS"/>
+                            <constraint firstItem="Vze-Yh-BJ2" firstAttribute="width" secondItem="tfV-ro-2je" secondAttribute="width" id="oh6-Dj-up6"/>
                             <constraint firstItem="tgo-aW-hMV" firstAttribute="leading" secondItem="Dc2-C7-GAU" secondAttribute="trailing" constant="1" id="tax-li-v0P"/>
                             <constraint firstAttribute="trailing" secondItem="AEO-8h-MJp" secondAttribute="trailing" constant="16" id="uIq-gA-sKI"/>
                             <constraint firstItem="tCa-1a-xJl" firstAttribute="leading" secondItem="tgo-aW-hMV" secondAttribute="trailing" constant="1" id="uPk-L8-763"/>
                             <constraint firstItem="jpq-9l-c4K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="v7L-PY-BOb"/>
+                            <constraint firstItem="tfV-ro-2je" firstAttribute="centerY" secondItem="Vze-Yh-BJ2" secondAttribute="centerY" id="vD2-yr-Oii"/>
                             <constraint firstItem="dBQ-lW-erL" firstAttribute="top" secondItem="3Xn-fU-QHS" secondAttribute="bottom" constant="4" id="wOT-Yc-qvO"/>
+                            <constraint firstItem="Gb2-IB-YXT" firstAttribute="leading" secondItem="tfV-ro-2je" secondAttribute="trailing" constant="1" id="wam-eg-c9P"/>
                             <constraint firstItem="bOl-wC-aBp" firstAttribute="top" secondItem="dBs-bv-1VZ" secondAttribute="bottom" constant="4" id="xIQ-Bg-FMG"/>
+                            <constraint firstItem="Gb2-IB-YXT" firstAttribute="centerY" secondItem="tfV-ro-2je" secondAttribute="centerY" id="yVq-5U-b3C"/>
+                            <constraint firstItem="tfV-ro-2je" firstAttribute="leading" secondItem="Vze-Yh-BJ2" secondAttribute="trailing" constant="1" id="ywi-Qp-9aD"/>
                             <constraint firstItem="jpq-9l-c4K" firstAttribute="top" secondItem="cnL-7l-ufp" secondAttribute="bottom" constant="4" id="zYy-oC-PD7"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="482" y="479"/>
         </scene>
     </scenes>
 </document>

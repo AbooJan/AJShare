@@ -205,9 +205,14 @@
     [[AJShare shareInstance] readUserInfoWithType:AJPlatformTypeSinaWeibo result:^(BOOL success, SSDKUser *user, NSError *error) {
        
         if (success) {
+            
+            // user.rawData 为微博原始用户数据，字段对应意思参考微博文档
+            
             NSLog(@"获取信息成功");
             NSLog(@"==============");
             NSLog(@"%@", [user description]);
+            NSLog(@"\n\n头像:%@\n高清头像：%@\n大头像:%@", user.icon, user.rawData[@"avatar_hd"], user.rawData[@"avatar_large"]);
+            NSLog(@"\n\nrawData: %@", [user rawData]);
             NSLog(@"==============");
         }
         

@@ -19,6 +19,7 @@
 		DB1364611C52050A00333BE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1364601C52050A00333BE8 /* UIKit.framework */; };
 		DB1364631C52051000333BE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1364621C52051000333BE8 /* Foundation.framework */; };
 		DB1364651C52099700333BE8 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1364641C52099700333BE8 /* MOBFoundation.framework */; };
+		DB2BFB291C7ED620004ACD2F /* AJShareConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFB281C7ED620004ACD2F /* AJShareConfig.m */; };
 		DB2CA2701C5321D000A8750C /* ThirdPartLoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2CA26F1C5321D000A8750C /* ThirdPartLoginUser.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		DB1364601C52050A00333BE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DB1364621C52051000333BE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB1364641C52099700333BE8 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		DB2BFB271C7ED620004ACD2F /* AJShareConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJShareConfig.h; sourceTree = "<group>"; };
+		DB2BFB281C7ED620004ACD2F /* AJShareConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJShareConfig.m; sourceTree = "<group>"; };
 		DB2CA26E1C5321D000A8750C /* ThirdPartLoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartLoginUser.h; sourceTree = "<group>"; };
 		DB2CA26F1C5321D000A8750C /* ThirdPartLoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartLoginUser.m; sourceTree = "<group>"; };
 		EDAACAE213B3D8DF0845D932 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				DB1364081C51CF4A00333BE8 /* Supporting Files */,
 				DB13645B1C51D06800333BE8 /* AJShare.h */,
 				DB13645C1C51D06800333BE8 /* AJShare.m */,
+				DB2BFB271C7ED620004ACD2F /* AJShareConfig.h */,
+				DB2BFB281C7ED620004ACD2F /* AJShareConfig.m */,
 				DB2CA26E1C5321D000A8750C /* ThirdPartLoginUser.h */,
 				DB2CA26F1C5321D000A8750C /* ThirdPartLoginUser.m */,
 			);
@@ -264,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2BFB291C7ED620004ACD2F /* AJShareConfig.m in Sources */,
 				DB1364101C51CF4A00333BE8 /* ViewController.m in Sources */,
 				DB13640D1C51CF4A00333BE8 /* AppDelegate.m in Sources */,
 				DB13645D1C51D06800333BE8 /* AJShare.m in Sources */,

@@ -23,19 +23,7 @@
 #import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 
 #import "ThirdPartLoginUser.h"
-
-//=======配置信息========
-
-static NSString * const SHARE_SDK_APP_KEY       = @"6e6cb2d87697";
-static NSString * const QQ_APP_KEY              = @"1104546864";
-static NSString * const QQ_APP_SECRET           = @"kTpcob4Qh7wKKmoQ";
-static NSString * const WECHAT_APP_KEY          = @"wx495e45d3b4222c64";
-static NSString * const WECHAT_APP_SECRET       = @"45c404eb398c3e5018bf33d8841502e3";
-static NSString * const SINA_WEIBO_APP_KEY      = @"220014033";
-static NSString * const SINA_WEIBO_APP_SECRET   = @"9d94bb3d32dca6092787af7fa3b327ea";
-static NSString * const SINA_CALL_BACK_URL      = @"http://www.jianzhimao.com";
-
-//=====================
+#import "AJShareConfig.h"
 
 
 @implementation AJShare
@@ -73,7 +61,7 @@ static AJShare *_instance;
 
 - (void)initSDK
 {
-    [ShareSDK registerApp:SHARE_SDK_APP_KEY
+    [ShareSDK registerApp:APP_KEY_SHARE_SDK
           activePlatforms:@[
                             @(SSDKPlatformTypeSinaWeibo),
                             @(SSDKPlatformTypeWechat),
@@ -104,18 +92,18 @@ static AJShare *_instance;
               {
                   case SSDKPlatformTypeSinaWeibo:
                       //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                      [appInfo SSDKSetupSinaWeiboByAppKey:SINA_WEIBO_APP_KEY
-                                                appSecret:SINA_WEIBO_APP_SECRET
+                      [appInfo SSDKSetupSinaWeiboByAppKey:APP_KEY_SINA_WEIBO
+                                                appSecret:APP_SECRET_SINA_WEIBO
                                               redirectUri:SINA_CALL_BACK_URL
                                                  authType:SSDKAuthTypeBoth];
                       break;
                   case SSDKPlatformTypeWechat:
-                      [appInfo SSDKSetupWeChatByAppId:WECHAT_APP_KEY
-                                            appSecret:WECHAT_APP_SECRET];
+                      [appInfo SSDKSetupWeChatByAppId:APP_KEY_WECHAT
+                                            appSecret:APP_SECRET_WECHAT];
                       break;
                   case SSDKPlatformTypeQQ:
-                      [appInfo SSDKSetupQQByAppId:QQ_APP_KEY
-                                           appKey:QQ_APP_SECRET
+                      [appInfo SSDKSetupQQByAppId:APP_KEY_QQ
+                                           appKey:APP_SECRET_QQ
                                          authType:SSDKAuthTypeBoth];
                       break;
                   default:

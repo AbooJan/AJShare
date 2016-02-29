@@ -128,6 +128,25 @@ static AJShare *_instance;
 
 - (void)shareWithTitle:(NSString *)title content:(NSString *)content url:(NSString *)url image:(id)image sender:(id)sender relust:(ShareResult)result
 {
+    // 1. 分享平台
+    NSMutableArray *activePlatforms = [NSMutableArray arrayWithArray:[ShareSDK activePlatforms]];
+    
+    // 2. 分享
+    [self shareWithPlatformArray:activePlatforms title:title content:content url:url image:image sender:sender relust:result];
+}
+
+- (void)shareWithPlatformArray:(NSArray *)platformArray title:(NSString *)title content:(NSString *)content url:(NSString *)url imageUrl:(NSString *)imageUrl sender:(id)sender relust:(ShareResult)result
+{
+    [self shareWithPlatformArray:platformArray title:title content:content url:url image:imageUrl sender:sender relust:result];
+}
+
+- (void)shareWithPlatformArray:(NSArray *)platformArray title:(NSString *)title content:(NSString *)content url:(NSString *)url imageName:(NSString *)imageName sender:(id)sender relust:(ShareResult)result
+{
+    [self shareWithPlatformArray:platformArray title:title content:content url:url image:[UIImage imageNamed:imageName] sender:sender relust:result];
+}
+
+- (void)shareWithPlatformArray:(NSArray *)platformArray title:(NSString *)title content:(NSString *)content url:(NSString *)url image:(id)image sender:(id)sender relust:(ShareResult)result
+{
     // 1. 分享内容
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKSetupShareParamsByText:content
@@ -146,12 +165,9 @@ static AJShare *_instance;
                                             objectID:nil
                                                 type:SSDKContentTypeAuto];
     
-    // 2. 分享平台
-    NSMutableArray *activePlatforms = [NSMutableArray arrayWithArray:[ShareSDK activePlatforms]];
-    
     // 3. 分享
     [ShareSDK showShareActionSheet:sender
-                             items:activePlatforms
+                             items:platformArray
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
                    [self handleResultWithStata:state err:error callback:result];

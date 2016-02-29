@@ -261,4 +261,23 @@
     [[AJShare shareInstance] cancelAuthorizeWithType:AJPlatformTypeWeChat];
 }
 
+#pragma mark - <指定分享平台>
+- (IBAction)shareBtnClick:(UIButton *)sender
+{
+    NSString *titleStr = @"兼职猫,喵了个咪!";
+    NSString *contentStr = @"这是分享内容测试，测试内容，测试~";
+    NSString *imgName = @"default_share_pic";
+    NSString *url = @"http://www.jianzhimao.com";
+    NSString *imgUrl = @"http://oss.aliyuncs.com/jianzhimao/jzmao/qiye/1702487/1449231769684_logo.jpg";
+    
+    NSArray *platformArray = @[@(AJShareTypeWeChatFriends), @(AJShareTypeWeChatTimeLine)];
+    
+    [[AJShare shareInstance] shareWithPlatformArray:platformArray title:titleStr content:contentStr url:url imageName:imgName sender:sender relust:^(BOOL success, NSError *error) {
+        if (success) {
+            NSLog(@"分享成功");
+        }
+    }];
+}
+
+
 @end

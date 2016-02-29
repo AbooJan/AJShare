@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -208,6 +208,18 @@
                                     <action selector="wechatCancelAuthBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7bl-3F-qwj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqu-nr-2Nk">
+                                <rect key="frame" x="131" y="36" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IsP-lc-7bU"/>
+                                    <constraint firstAttribute="width" constant="150" id="Kv5-PD-5kq"/>
+                                </constraints>
+                                <state key="normal" title="指定分享平台"/>
+                                <connections>
+                                    <action selector="shareBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeu-4e-ePn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -246,11 +258,13 @@
                             <constraint firstItem="cnL-7l-ufp" firstAttribute="top" secondItem="Dc2-C7-GAU" secondAttribute="bottom" constant="20" id="ezQ-R9-k0S"/>
                             <constraint firstItem="h42-sB-1K5" firstAttribute="top" secondItem="hJh-AY-N5A" secondAttribute="bottom" constant="4" id="fKN-cO-GHA"/>
                             <constraint firstItem="h42-sB-1K5" firstAttribute="width" secondItem="bOl-wC-aBp" secondAttribute="width" id="gW2-lU-46M"/>
+                            <constraint firstItem="Qqu-nr-2Nk" firstAttribute="leading" secondItem="e97-Vt-ZbX" secondAttribute="trailing" constant="15" id="gt2-TT-Rft"/>
                             <constraint firstAttribute="trailing" secondItem="Gb2-IB-YXT" secondAttribute="trailing" constant="16" id="lvq-Et-9zp"/>
                             <constraint firstItem="e97-Vt-ZbX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="mW8-kQ-U0l"/>
                             <constraint firstItem="h42-sB-1K5" firstAttribute="leading" secondItem="dBQ-lW-erL" secondAttribute="trailing" constant="1" id="n2m-92-isN"/>
                             <constraint firstItem="AEO-8h-MJp" firstAttribute="leading" secondItem="Syl-um-jvf" secondAttribute="trailing" constant="1" id="o0F-rC-RkS"/>
                             <constraint firstItem="Vze-Yh-BJ2" firstAttribute="width" secondItem="tfV-ro-2je" secondAttribute="width" id="oh6-Dj-up6"/>
+                            <constraint firstItem="Qqu-nr-2Nk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="qSY-r8-dzp"/>
                             <constraint firstItem="tgo-aW-hMV" firstAttribute="leading" secondItem="Dc2-C7-GAU" secondAttribute="trailing" constant="1" id="tax-li-v0P"/>
                             <constraint firstAttribute="trailing" secondItem="AEO-8h-MJp" secondAttribute="trailing" constant="16" id="uIq-gA-sKI"/>
                             <constraint firstItem="tCa-1a-xJl" firstAttribute="leading" secondItem="tgo-aW-hMV" secondAttribute="trailing" constant="1" id="uPk-L8-763"/>

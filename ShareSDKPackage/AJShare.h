@@ -59,6 +59,32 @@ typedef void(^ReadUserInfoResult)(BOOL success, SSDKUser *user, NSError *error);
  */
 - (void)shareWithTitle:(NSString *)title content:(NSString *)content url:(NSString *)url imageUrl:(NSString *)imageUrl sender:(id)sender relust:(ShareResult)result;
 
+/**
+ *  指定分享平台
+ *
+ *  @param platformArray 平台数组
+ *  @param title    分享标题
+ *  @param content  分享内容
+ *  @param url      分享URL
+ *  @param imageName 分享图片名称，注意：图片必须要在Xcode左边目录里面，名称必须要传正确
+ *  @param sender   分享触发View
+ *  @param result   分享回调Block
+ */
+- (void)shareWithPlatformArray:(NSArray *)platformArray title:(NSString *)title content:(NSString *)content url:(NSString *)url imageName:(NSString *)imageName sender:(id)sender relust:(ShareResult)result;
+
+/**
+ *  指定分享平台
+ *
+ *  @param platformArray 平台数组
+ *  @param title    分享标题
+ *  @param content  分享内容
+ *  @param url      分享URL
+ *  @param imageUrl 分享图片链接
+ *  @param sender   分享触发View
+ *  @param result   分享回调Block
+ */
+- (void)shareWithPlatformArray:(NSArray *)platformArray title:(NSString *)title content:(NSString *)content url:(NSString *)url imageUrl:(NSString *)imageUrl sender:(id)sender relust:(ShareResult)result;
+
 
 /**
  *  无UI目标平台分享
